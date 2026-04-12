@@ -1,0 +1,11 @@
+# Ignorar executáveis do Windows e Linux/Mac
+*.exe
+analisador
+
+# Ignorar arquivos objeto
+*.o
+
+# Ignorar as saídas geradas
+*.lex
+*.ts
+*.err
