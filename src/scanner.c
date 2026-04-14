@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-#include "token.h"
-#include "ts.h"
+#include "../include/token.h"
+#include "../include/ts.h"
 
 // Variáveis globais de controle de posição
 int linha_atual = 1;

@@ -1,7 +1,7 @@
 #ifndef TS_H
 #define TS_H
 
-#include "token.h"
+#include "../include/token.h"
 
 #define TABLE_SIZE 101 
 
@@ -16,5 +16,6 @@ void inserirSimbolo(char* lexema, TokenType tipo);
 Simbolo* buscarSimbolo(char* lexema);
 int ehPalavraReservada(char* lexema);
 void imprimirTS();
+void gravarTS(char* nomeArquivo);
 
 #endif

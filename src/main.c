@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "token.h"
-#include "ts.h"
+#include "../include/token.h"
+#include "../include/ts.h"
 
 // Assinatura da função do scanner
 Token proximoToken(FILE *arquivo);
@@ -35,5 +35,9 @@ int main() {
     imprimirTS(); 
 
     fclose(arquivo);
+
+    gravarTS("saida.ts");
+    printf("Arquivo da Tabela de Simbolos gerado com sucesso!\n");
+
     return 0;
 }

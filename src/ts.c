@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "token.h"
-#include "ts.h"
+#include "../include/token.h"
+#include "../include/ts.h"
 
 Simbolo* tabela[TABLE_SIZE];
 
@@ -96,4 +96,18 @@ void imprimirTS() {
             atual = atual->prox;
         }
     }
+}
+
+void gravarTS(char* nomeArquivo) {
+    FILE *f = fopen(nomeArquivo, "w");
+    if (!f) return;
+    fprintf(f, "--- TABELA DE SIMBOLOS FINAL ---\n");
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        Simbolo* s = tabela[i];
+        while (s) {
+            fprintf(f, "Token: %d | Lexema: %s\n", s->tipo, s->lexema);
+            s = s->prox;
+        }
+    }
+    fclose(f);
 }
